@@ -9,23 +9,22 @@
 
 import random
 
-    def estimate_pi(n):
-        num_point_circle = 0
-        num_point_square = 0
-        for points in range(n):
-            x = random.uniform(0, 1)
-            y = random.uniform(0, 1)
-            distance = x**2 + y**2
-            if distance <= 1:
-                num_point_circle += 1
-            else:
-                num_point_square += 1
-        return 4 * num_point_circle/num_point_square
+
+def estimate_pi(n):
+    num_point_circle = 0
+    num_point_square = 0
+    for _ in range(n):
+        x = random.uniform(0, 1)
+        y = random.uniform(0, 1)
+        distance = x ** 2 + y ** 2
+        if distance <= 1:
+            num_point_circle += 1
+        num_point_square += 1
+    return 4 * num_point_circle / num_point_square
 
 # remember this generates a random number uniformly
 # so basically the higher the number the closest it gets to the actual pi 3,14159
-    estimate_pi(10)
-    estimate_pi(100)
-    estimate_pi(1000)
-
-
+print(estimate_pi(10))
+print(estimate_pi(100))
+print(estimate_pi(1000))
+print(estimate_pi(100000))
